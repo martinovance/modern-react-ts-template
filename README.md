@@ -1,25 +1,54 @@
-# Welcome to vite-ts-react-starter-plate
+# Welcome to Modern React TS Starter
 
-## Technologies used
+> A clean, production-ready starter template for building React applications with TypeScript, Vite, React Query, Axios, TailwindCSS (or Radix/shadcn UI) and more.
 
-- [vite](https://vitejs.dev/)
-- [tanstack/react-query](https://tanstack.com/query/v4/docs/react/overview)
-- [Axios](https://axios-http.com/docs/intro)
+## 🚀 Why this template  
+This template is designed to give you a solid foundation for your next React + TypeScript project, with features like:  
+- ⚡️ Blazing fast build & dev experience using Vite  
+- ✅ TypeScript for type safety  
+- 🧠 Data-fetching & caching using React Query (i.e., the TanStack variant)  
+- 🔌 HTTP client via Axios  
+- 🎨 Styling / UI: either plain TailwindCSS or Tailwind + Radix UI + shadcn/ui (depending on branch)  
+- 📁 Opinionated folder structure to keep your app scalable  
+- 🧪 Out-of-the-box setup so you focus on building features, not configuration  
 
-## Styling
+## 📦 Features  
+- Vite dev server + hot module replacement  
+- TypeScript config tuned for React + Vite  
+- React Query for data / server state  
+- Axios setup with base URL configuration  
+- TailwindCSS (and optionally Radix UI / shadcn UI) for UI components  
+- Boilerplate layout with example pages/components  
+- ESLint and TSConfig files pre-configured  
+- Public assets folder and index.html template  
 
-- The Tailwind-radixUI branch uses TailwindCSS, Radix UI, and is spinned with shadcn/ui, a beautifully designed component library built on top of Radix and Tailwind
+## 🛠️ Getting Started  
+### Prerequisites  
+Make sure you have the following installed:  
+- Node.js (v14+ or whatever your project requires)  
+- Yarn (or you may use npm/pnpm but this template uses Yarn by default)  
 
-# Getting Started
+### Install & Run  
+` bash
+# Clone the repo
+git clone https://github.com/your-org/modern-react-ts-starter.git
+cd modern-react-ts-starter
 
-The following should be installed in your machine.
+# Install dependencies
+yarn
 
-- [Node.Js](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/)
+# Create a .env file
+# For example:
+# VITE_APP_BASE_URL=https://jsonplaceholder.typicode.com
 
-## How To Install And Run The Application
+cp .env.example .env        # (if you provide an example)
+# or manually create .env with required keys
 
-- Clone this repo and `cd` into it
-- Create a `.env` file and add this `VITE_APP_BASE_URL=https://jsonplaceholder.typicode.com`
-- Install the dependencies by running `yarn`
-- Start the application on development mode by running `yarn start`
+# Start development server
+yarn dev
+
+# Build for production
+yarn build
+
+# Serve production build locally
+yarn preview
