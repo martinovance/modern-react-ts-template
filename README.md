@@ -37,18 +37,18 @@ cd modern-react-ts-starter
 # Install dependencies
 yarn
 
-# Create a .env file
-# For example:
-# VITE_APP_BASE_URL=https://jsonplaceholder.typicode.com
+### Create a .env file
+### For example:
+### VITE_APP_BASE_URL=https://jsonplaceholder.typicode.com
 
 cp .env.example .env        # (if you provide an example)
-# or manually create .env with required keys
+### or manually create .env with required keys
 
-# Start development server
+### Start development server
 yarn dev
 
-# Build for production
+### Build for production
 yarn build
 
-# Serve production build locally
+### Serve production build locally
 yarn preview
