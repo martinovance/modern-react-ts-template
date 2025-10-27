@@ -3,6 +3,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 type Props = {
   children: React.ReactNode;
@@ -34,10 +35,11 @@ const queryClient = new QueryClient({
   }),
 });
 
-const Providers = (props: Props) => {
+const Providers = ({ children }: Props) => {
   return (
     <QueryClientProvider client={queryClient}>
-      {props.children}
+      {children}
+      {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
     </QueryClientProvider>
   );
 };

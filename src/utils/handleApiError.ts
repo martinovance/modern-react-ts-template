@@ -1,4 +1,4 @@
-import { IError } from "@/types/error";
+import type { IError } from "@/types/error";
 // This file contains configuration for handling error states from API after a request fails.
 
 const handleApiError = (error: IError) => {
@@ -30,7 +30,7 @@ const handleApiError = (error: IError) => {
     case 401:
       return data.message || "Unauthorized";
     case 409:
-      return "A duplicate already eists";
+      return "A duplicate already exists";
     default:
       return "Something went wrong";
   }

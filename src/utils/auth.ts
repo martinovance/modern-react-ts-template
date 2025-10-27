@@ -20,10 +20,13 @@ const getRefreshToken = () => {
 const getDecodedJwt = () => {
   try {
     const token = getToken();
-    return jwtDecode(token!);
-  } catch (e) {
-    console.log(e);
-    return {};
+    if (!token) return null;
+    return jwtDecode(token);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.error("Failed to decode JWT:", error);
+    }
+    return null;
   }
 };
 
@@ -40,12 +43,17 @@ const isAuthenticated = () => {
   try {
     const decodedToken = getDecodedJwt();
 
-    const { exp } = decodedToken as { exp: number };
-    const currentTime = Date.now() / 1000;
+    if (!decodedToken) return false;
 
+    const { exp } = decodedToken as { exp: number };
+    if (!exp) return false;
+
+    const currentTime = Date.now() / 1000;
     return exp > currentTime;
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.error("Failed to check authentication:", error);
+    }
     return false;
   }
 };
